@@ -34,6 +34,8 @@ class Student:
         self.total_credits = 0
         self.major = major
 
+    #Do not look at (hint for next clue)
+
     def enroll(self, new_course):
         if self.total_credits + new_course.credits > 15:
             return 'Full Schedule'
