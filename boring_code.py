@@ -1,4 +1,23 @@
 #Starting boring project
+
+def start_simulation(items: list, iterations: int) -> dict:
+    """
+        This is to assist with running the code and have auto updates
+        whenever we add anything new. Simply just aids our interface
+    """
+    count = 0
+    after = {}
+    for item in items:
+        new = item[:4]
+        count += 1
+        if new not in after:
+            after[new] = count
+        else:
+            after[new] = list(after[new]) + [count]
+
+    return new
+
+
 def scavenger_hunt() -> None:
     i = 0
     while i < 10:
@@ -33,8 +52,6 @@ class Student:
         self.courses = []
         self.total_credits = 0
         self.major = major
-
-    #Do not look at (hint for next clue)
 
     def enroll(self, new_course):
         if self.total_credits + new_course.credits > 15:
